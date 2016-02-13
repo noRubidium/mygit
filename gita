@@ -4,7 +4,6 @@ if [ $# -gt 0 ]
 then
   git commit -am "$@"
 else
-  echo $i
   git commit -am "$i"
 fi
 git push

@@ -1,7 +1,8 @@
+i=$(git diff | grep ^diff | sed 's/diff\s*-*git\s*a\/\(.*\)\sb\/\1/Changed file -- \1/ig')
 git add .
 if [ $# -gt 0 ]
 then
   git commit -am "$@"
 else
-  git commit -am "Too lazy to add message"
+  git commit -am "$i"
 fi

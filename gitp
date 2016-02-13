@@ -1,2 +1,8 @@
-git commit -am $1
+i=$(git diff | grep ^diff | sed 's/diff\s*-*git\s*a\/\(.*\)\sb\/\1/Changed file -- \1/ig')
+if [ $# -gt 0 ]
+then
+  git commit -am "$@"
+else
+  git commit -am "$i"
+fi
 git push

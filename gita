@@ -1,8 +1,10 @@
+$i=`git diff | grep ^diff | sed "s/diff\s*-*git\s*//ig"`
 git add .
 if [ $# -gt 0 ]
 then
   git commit -am "$@"
 else
-  git commit -am "Too lazy to add message"
+  echo $i
+  git commit -am "$i"
 fi
 git push

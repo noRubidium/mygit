@@ -1,2 +1,0 @@
-i=$(git diff | grep ^diff | sed 's/diff\s*-*git\s*a\/\(.*\)\sb\/\1/Changed file -- \1/ig')
-echo $i Cool

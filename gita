@@ -1,4 +1,4 @@
-i=`./functions/git_get_msg $@`
+i=`./functions/git_get_msg "$@"`
 git add .
 git commit -am "$i"
 git push

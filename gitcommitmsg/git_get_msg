@@ -1,0 +1,6 @@
+if [ $# -gt 0 ]
+then
+  echo $@
+else
+  git diff | grep ^diff | sed 's/diff\s*-*git\s*a\/\(.*\)\sb\/\1/Changed file -- \1/ig'
+fi

@@ -1,9 +1,4 @@
-i=`./functions/git_get_msg`
+i=`./functions/git_get_msg $@`
 git add .
-if [ $# -gt 0 ]
-then
-  git commit -am "$@"
-else
-  git commit -am "$i"
-fi
+git commit -am "$i"
 git push

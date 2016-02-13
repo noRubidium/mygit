@@ -1,7 +1,7 @@
 git add .
 if [ $# -gt 0 ]
 then
-  git commit -am "@a"
+  git commit -am "$@"
 else
   git commit -am "Too lazy to add message"
 fi
